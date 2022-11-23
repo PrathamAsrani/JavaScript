@@ -1,0 +1,35 @@
+Note : always put the script link or script tag at the very bottom of body tag to avoid slow loading of your website
+
+
+Java script is a browser serving language and supports dynamic type of variable. (dynamic = self allocating the type of variable)
+
+Action Performed by JS:
+    a. Adding new HTML and changing the existing one.
+    b. React to event( event is a request made by the user (e.g. clicking a button ))
+                b.1 - response to the server
+                b.2 - key press
+                b.3 - Mouse movement
+    c. Ajax Request - Asynchronous JavaScript XML request
+    d. Get and Set cookies and storing data to local storage
+
+Action Cannot performed by JavaScript : 
+    a. It cannot access our HDD/SSD data   
+    b. can'tprovid access to the cross sites
+
+what makes JavaScript unique : 
+    a. supports the HTML & css 
+    b. support modern browser (enable by default)
+    c. Simpe API
+
+ECMA (Since 1997) - SCRIPTING Standard maintaing the JavaScript
+
+
+Operators in Js : 
+1. unary : It has single operand ( -10 ) or (x = -x)
+2. binary : It has double operand ( 3+4 ) or (x = x+6)
+3. ternary : (e.g. let marks = 41; let result = (marks >= 40)? "Passed" : "Failed";)
+
+Explanation : 
+3 + 4 -> in it + is the opertor and 3, 4 are the operands
+
+Html collection : it is the collection of elements accessed from a defined class of HTML website it is converted into array using 'Array.from({{name of variable stroing the html collection}})'
