@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Want to know my name: </h3>
+        <br>
+        <br>
+        <h1 id="output"></h1>
+        <br>
+        <br>
+        <button class="btn">click me</button>
+        <br>
+        <button onclick="try_setTimeout = setTimeout(myFunction, 3000)">setTimeout</button>
+        <button onclick="clearTimeout(try_setTimeout)">clearTimeout</button>
+
+
+
+        <!--setInterval-->
+
+        <h2><label for="timer_count">Stop me at : </label></h2>
+        <input type="number" name="timer_count" id="timer_count" placeholder="1000" min="100" max="10000">
+        <h1 id="out1"></h1>
+        <button id="startTimer">start timer</button>
+        <button id="stopTimer">stop timer</button>
+
+
+        <script>
+            /*
+            all the below four are connected with each other, window object allows execution of code at specified time intervals.
+                1. setTimeout() // specified time like 1hr, 2hr, 1min, etc.
+                2. setInterval() // countdown
+                3. clearTimeout() 
+                4. clearInterval()
+            */
+
+            const op = document.getElementById("output");
+            const btn = document.querySelector(".btn");
+            const showName = () => {
+                op.innerHTML = "Loading...";
+                setInterval(() => {
+                    op.innerHTML = "Pratham Asrani";
+                }, 3000);
+            };
+            btn.addEventListener('click', showName);
+
+            const myFunction = () => {
+                alert("Fuck U!\n");
+            }
+
+
+            // setInterval
+            const cl = document.querySelector("#startTimer");
+            let timeInterval;
+
+            const startTimer = () => {
+                const count = document.getElementById("timer_count").value;
+                alert(count);
+                let num = 0;
+                document.getElementById("out1").innerHTML = "Loading yaya";
+                timeInterval = setInterval(() => {
+                    document.getElementById("out1").innerHTML = `${num}`;
+                    num++;
+                }, count); // count will decide the speed in milliseconds, 1000ms = 1sec
+            };
+
+            cl.addEventListener('click', startTimer);
+
+            // clear interval
+            const clea = document.querySelector("#stopTimer");
+
+            const stopTimer = () => {
+                clearInterval(timeInterval);
+            };
+            clea.addEventListener('click', stopTimer);
+
+        </script>
+</body>
+
+</html>

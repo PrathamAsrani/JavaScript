@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use of SetTime</title>
+</head>
+<body>
+    <p>click the button to display date after changing the </p>
+    <button onclick = "myFunction()">Try it</button>
+    <p>The hour, minutes, and seconds are set: 6, 10, 10 respectively: <span id="demo"></span></p>
+
+    <script>
+        const myFunction= () =>{
+            var date = new Date();
+            date.setHours(6);
+            date.setMinutes(10);
+            date.setSeconds(10);
+            document.getElementById("demo").innerHTML = date.toLocaleString();
+        }
+        // (function(){
+        //     setInterval(()=>{
+        //         console.log(new Date().toLocaleTimeString());
+        //         var x = new Date().toLocaleTimeString();
+        //         document.getElementById("demo").innerHTML = x;
+        //     }, 1000)
+        // })();
+    </script>
+</body>
+</html>

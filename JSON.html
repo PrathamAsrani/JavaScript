@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // JSON : 'JS notation', is defined as language  to create API that will be going go store data and that data will be communicated with the differnet softeare via API
+
+        // run in browser console
+        let myObj=  {
+            key_1 : "some text", 
+            key_2 : true,
+            key_3 : 5
+        };
+        
+        // to convert the 'Object' in the 'JSON data';
+        let myObjStringJSON = JSON.stringify(myObj);
+
+        console.log(myObjStringJSON);
+
+        // to convert the 'JSON data' in the 'Object';
+        let againMyObj = JSON.parse(myObjStringJSON);
+    </script>
+</body>
+</html>

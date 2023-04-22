@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventsType</title>
+</head>
+<body>
+    <button onclick="alert( 'alert used in inline' );">inbuilt(alert, prompt, and confirm)</button>
+    <br>
+    <br>
+    <button onclick="prompt( 'prompt used in inline\nEnter value: ' );">inbuilt(alert, prompt, and confirm)</button>
+    <br>
+    <br>
+    <button onclick="confirm( 'confirm used in inline' );">inbuilt(alert, prompt, and confirm)</button>
+    <br>
+    <br>
+    <button onclick="FunctionCalling()">Function</button>
+    <br>
+    <br>
+    <a href="#" id="Inline_Event"><Button>Inline Event via anchor tag</Button></a>
+    <br>
+    <br>
+    <a href="#" id="event_listener"><button>event_listener</button></a>
+
+    <script>
+        // function Event calling
+        let FunctionCalling = () => alert("I am function called in event");
+
+        // Inline_Event calling
+        document.getElementById("Inline_Event").onclick = function () { // anonymou function
+            alert("Inline functioon calling\n");
+        }
+
+        // event_listener
+        // note: callBack Function, is a function in which a function is called inside another function in declaration itself as shown below
+        // const fourthWay = document.getElementById("event_listener");
+        // or
+        const fourthWay = document.querySelector("#event_listener"); // reference in fourthWay
+        fourthWay.addEventListener('click', () => {
+            alert("I am a callBack function\ncalled in event listener");
+        }, false ) // it takes three arguments : 1. type, 2. function, and 3. true or false
+    </script>
+</body>
+</html>

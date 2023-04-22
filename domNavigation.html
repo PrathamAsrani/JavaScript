@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domNavigation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .child, form, p, ul{
+            width: 100%;
+            height: 33vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .paragraph{
+            width: 20vw;
+            height: 10vh;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div class="child" id="one">
+            <p>I am the first child</p>            
+        </div>
+        <div class="child" id="two">
+            <p>I am the second child</p>            
+        </div>
+        <div class="child" id="three">
+            <p>I am the third child</p>                
+        </div>
+    </div>
+    <form action ="onSubmit()">
+        <label for="gender">male</label>
+        <input type="radio" name="gender" class="gender" title="gender">
+        <label for="gender">female</label>
+        <input type="radio" name="gender" class="gender" title="gender">
+    </form>
+    <p class="paragraph"></p>
+    <p class="paragraph"></p>
+
+    <ul>
+        <li class="testing">html</li>
+        <li class="testing">CSS</li>
+        <li class="testing">JavaScript</li>
+    </ul>
+    <button onclick="onSubmit()">click me</button>
+
+    <script src="s.js"></script>
+</body>
+</html>

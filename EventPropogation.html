@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 0 0 0.2px;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #parentid{
+            width: 50vw;
+            height: 50vw;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #childid{
+            width: 10vw;
+            height: 10vw;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parentid">
+        <div id="childid">
+
+        </div>
+    </div>
+
+
+    <script>
+        // Event propogation?, event bubbling?, and event capturing?
+
+        // Event propogation: determines in which order the elements received the events.
+        // e.g. window<--->document<--->html<--->body<--->div<--->button<--->click.
+
+        // event bubbling?, and event capturing?: these are the two ways of 'Event propogation' in the HTML DOM API, when an event occurs in an element inside another element inside, and both element have registered a handle for that event. The event propogation mode determines in which order the elements receive the event. from bottom to top(i.e. from target to window) = event bubbling, and from top to bottom(i.e. from window to target) = event capturing.
+
+        // capturing is also called trickling.
+
+        let parent = document.getElementById("parentid");
+        let child = document.getElementById("childid");
+        parent.addEventListener('click', () => {
+            alert("This a parent div\n");
+        }, true); // on 'true' it is on event capturing, to change it to event bubbling just make 'true' as 'false'
+
+        const myFuncForChild = () => {
+            // event.stopPropagation(); // child's event will be called and parent's event will be suspended
+            alert("This is a child div\n");
+        };
+
+        // event.stopPropogation(); : used to stop the event propogation
+
+        child.addEventListener("click", myFuncForChild, false); // default false
+    </script>
+</body>
+
+</html>

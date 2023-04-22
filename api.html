@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 20vw;
+            height: 10vw;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- <div class="card">
+            ${hii}
+        </div> -->
+    </div>
+
+
+
+
+    <script>
+        // refer below
+        // XMLHttpRequest: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+        // XMLHttpRequest is used heavily in AJAX programming.
+        // api: created useing node.js, mongoDB, mongos, Express.JS, etc.
+        const con = document.querySelector("#container");
+
+        const request = new XMLHttpRequest();
+        // request.open("GET", "PrathamAsrani.com");
+        // request.send();
+
+        // to get the response
+        request.addEventListener('load', () => {
+            // console.log(this.responseText); // data from api will br logged out.
+            // const [data] = JSON.parse(this.responseText); // JSON.parse() used to get the api data in JS object format
+            // console.log(data);
+            var hii = "Hi, Pratham! \nHow are you?";
+            // put the html div data in htmlData with variables 
+            const htmlData = `<div class="card">${hii}</div>`;
+            con.insertAdjacentHTML("afterbegin", htmlData);
+        });
+    </script>
+</body>
+
+</html>

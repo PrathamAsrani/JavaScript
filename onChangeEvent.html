@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onChangeEvent</title>
+</head>
+
+<body>
+    <div class="main-div">
+        <div>
+            <label for="name">Your name</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label>Choose an ice cream flavour
+                <select name="iceCream" id="iceCream" onchange="onChangeEvent()">
+                    <option value="">Select one _</option>
+                    <option value="chocolate">chocolate</option>
+                    <option value="vanilla">vanilla</option>
+                    <option value="strawberry">strawberry</option>
+                </select>
+            </label>
+            <br>
+            <div id="result"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        const onChangeEvent = () => {
+            let v = document.getElementById("iceCream").value;
+            document.getElementById("result").innerText = v;
+        }
+    </script>
+</body>
+
+</html>

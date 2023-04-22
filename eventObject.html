@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventObject</title>
+    <style>
+        #demo{
+            width: 10vw;
+            height: 10vw;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" id="hii"><button>Event Object</button></a>
+    
+    
+    <!--Mouse events: -->
+    <p class="para" onmousedown="mouseDown()" onmouseup="mouseUp()">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias praesentium, quidem necessitatibus adipisci commodi sed facere natus debitis, culpa sequi impedit voluptas vitae! Esse ratione qui atque fugiat ab cum rem dignissimos animi alias molestias enim in pariatur necessitatibus eligendi officiis consectetur aliquam cumque neque consequuntur voluptates beatae ipsa, minus quam? Corrupti suscipit nostrum veritatis excepturi veniam reiciendis magni quia, autem reprehenderit, natus, quae vitae inventore aliquid nihil nemo laborum qui tenetur molestias? Minima atque, minus optio neque tempora dolor. Neque cupiditate et nam aliquam eos amet excepturi quasi! Fugiat eum cum, ratione modi consequatur nulla debitis maxime totam quaerat!</p>
+
+    <p id="demo"></p>
+
+
+
+
+    <!--Keyboard events: occurs whe user presses a key on keyboard: -->
+    <p>A function get triggered when user presses a key in the input field: </p>
+    <br>
+    <label for="test">Testing</label>
+    <input type="text" name="test" id="test" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+    <br>
+    <p id="test-Keyboard"></p>
+
+    <script>
+        let obj = document.getElementById('hii');
+        // case 1
+        // obj.addEventListener('mousemove', function () {
+        //     console.log("Hii\n");
+        // }, false);
+
+        // case2
+        let chackEvent = () => {
+            alert("mouse out alert is called in event\n")
+            console.log(event);
+            console.log(event.target);
+            console.log(event.type);
+            document.body.style.background = "red";
+        };
+        obj.addEventListener('mouseout', chackEvent);
+
+
+
+
+        // mouse events: 
+        const mouseDown = () =>{
+            console.log(document.getElementsByClassName("para"));
+            var v = document.querySelector(".para").innerHTML;
+            console.log(v);
+            document.querySelector(".para").style.color = "red";
+        };
+
+        const mouseUp = () =>{
+            console.log(document.getElementsByClassName('para'));
+            console.log(document.querySelector('.para').innerHTML);
+            document.querySelector('.para').style.background = "black";
+            document.querySelector('.para').innerHTML = "Hii Pratham";
+        };
+
+
+
+        // demo : keyboard events
+        const mEnter = document.getElementById("demo");
+        mEnter.addEventListener('mouseenter', () => {
+            mEnter.innerHTML = "Hii Pratham";
+        });
+
+        const keyPress = () => {
+            document.getElementById("test-Keyboard").innerHTML = `keyPress: ${event.key} and it's code is ${event.code}`;
+        };
+        const keyDown = () => {
+            document.getElementById("test-Keyboard").innerHTML = "keyDown";
+        };
+        const keyUp = () => {
+            document.getElementById("test-Keyboard").innerHTML = "keyUp";
+        };
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <label for="name">name: </label>
+    <input type="text" name="name" id="name" placeholder="e.g. Rex">
+    <br>
+    <button onclick="myfunc()">submit</button>
+    <br>
+    <p id="demo"></p>
+
+
+    <!--Part 2-->
+</head>
+
+<body>
+
+
+    <script>
+        let n, a;
+        const myfunc = () => {
+            const string_name = document.getElementById("name").value;
+            let name = {
+                setName: (string_name) => {
+                    n = string_name;
+                },
+                getName: () => {
+                    alert(n);
+                },
+                // adding function directly, without colon
+                directFunc() {
+                    alert("This is a direct function");
+                }
+            }
+            name.setName(string_name);
+            name.getName();
+            name.directFunc();
+            document.getElementById("demo").innerText = n;
+        };
+
+
+
+        // Part 2: object inside object
+        let num;
+        let number = {
+            myFamilyMemberNumbers: {
+                myNum: {
+                    first: 9145495032,
+                    second: 9595130863
+                },
+                myFatherNum: 9325850421,
+                myMotherNum: 9372684108
+            },
+            setNumber: (n)=>{
+                num = n;
+            },
+            // syntax 1
+            // getNumber(){
+            //     alert(num);
+            // }
+            // syntax 2
+            getNumber: ()=>{
+                alert(num);
+            },
+            obj: {
+                verified: "object",
+                func: () => {
+                    console.log(this);
+                },
+                myAge() {
+                    console.log(this.verified);
+                }
+            }
+        }
+        // alert(number.myFamilyMemberNumbers.myNum.first);
+        // alert(number.myFamilyMemberNumbers.myNum.second);
+        // alert(number.myFamilyMemberNumbers.myFatherNum);
+        // alert(number.myFamilyMemberNumbers.myMotherNum);
+        // let nu = prompt("Enter value: \n");
+        // number.setNumber(nu);
+        // number.getNumber();
+
+
+        alert(number.obj.verified);
+        alert(number.obj.func());
+        alert(number.obj.myAge());
+    </script>
+</body>
+
+</html>

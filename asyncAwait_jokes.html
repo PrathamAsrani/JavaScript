@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .joke {
+            width: 20vw;
+            height: 5vw;
+            margin-bottom: 2vw;
+            color: black;
+            background-color: white;
+        }
+
+        #btn {
+            color: black;
+        }
+
+        * {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Joke :</h3>
+        <div class="joke" id="joke">Joke is loading...</div>
+        <button id="btn">next</button>
+    </div>
+
+
+
+    <script>
+        // promises: 
+        // fetch(/*link of api*/); // returns the promise.
+
+        // 90% we will consume promise, in advance we create promise.
+        const joke = document.querySelector("#joke");
+        const jokeBtn = document.querySelector("#btn");
+
+        const generateJoke = async () => {
+            // then and catch runs like try and catch.
+            try {
+                const setHeader = () => {
+                    Accept: "application/json";
+                };
+
+                const response = await fetch('https://icanhazdadjoke.com', setHeader)
+                const data = await response.json();
+                joke.innerHTML = data.joke;
+            }
+            catch (error) {
+                alert("API error!!!.......");
+            }
+        };
+
+        jokeBtn.addEventListener('click', generateJoke);
+        generateJoke();
+    </script>
+</body>
+
+</html>
